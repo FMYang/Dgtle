@@ -4,7 +4,7 @@ PODS:
   - FSPagerView (0.8.2)
   - HandyJSON (4.2.1)
   - JPFPSStatus (0.1.1)
-  - Kingfisher (4.10.1)
+  - Kingfisher (4.10.1-beta)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.1.15.7)
   - Moya/Core (12.0.1):
@@ -31,7 +31,7 @@ DEPENDENCIES:
   - FSPagerView
   - HandyJSON
   - JPFPSStatus
-  - Kingfisher
+  - "Kingfisher (from `git@github.com:FMYang/Kingfisher.git`, tag `4.10.0-beta`)"
   - MBProgressHUD
   - MJRefresh
   - Moya/RxSwift
@@ -48,7 +48,6 @@ SPEC REPOS:
     - FSPagerView
     - HandyJSON
     - JPFPSStatus
-    - Kingfisher
     - MBProgressHUD
     - MJRefresh
     - Moya
@@ -61,13 +60,23 @@ SPEC REPOS:
     - SwiftyJSON
     - YYKit
 
+EXTERNAL SOURCES:
+  Kingfisher:
+    :git: "git@github.com:FMYang/Kingfisher.git"
+    :tag: 4.10.0-beta
+
+CHECKOUT OPTIONS:
+  Kingfisher:
+    :git: "git@github.com:FMYang/Kingfisher.git"
+    :tag: 4.10.0-beta
+
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FSPagerView: 816a18842306973cc7cc6df8a5332272f7815c30
   HandyJSON: d0c5fc80204f29056d59d3e5c4587fa0b16b60a8
   JPFPSStatus: 03f32aa3d4d7d0c5bf56f6f3e7cf8b7280a5f52c
-  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Kingfisher: abd6835cfd04ff6f98696a39e23d094b7c8c2efa
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
@@ -80,6 +89,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 9f410ac50a50bbdc512ca25376a5a85aa6b450e2
+PODFILE CHECKSUM: 7b38a86528d51acb9a10f604877999d2a0f47475
 
 COCOAPODS: 1.6.0.beta.2

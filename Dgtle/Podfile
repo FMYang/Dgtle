@@ -14,8 +14,8 @@ target 'Dgtle' do
   # rx cocoa
   pod 'RxCocoa'
 
-  # image
-  pod 'Kingfisher'
+  # image, 使用修改代码后的个人分支
+  pod 'Kingfisher', :git => 'git@github.com:FMYang/Kingfisher.git', :tag => '4.10.0-beta'
 
   # image browser
   pod 'SKPhotoBrowser' # swift
