@@ -1,0 +1,50 @@
+project 'Dgtle.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Dgtle' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Dgtle
+  # network
+  pod 'Moya/RxSwift'
+
+  # rx cocoa
+  pod 'RxCocoa'
+
+  # image
+  pod 'Kingfisher'
+
+  # image browser
+  pod 'SKPhotoBrowser' # swift
+  # pod 'IDMPhotoBrowser' # oc
+
+  # layout
+  pod 'SnapKit'
+
+  # json
+  pod 'HandyJSON'
+  pod 'SwiftyJSON'
+
+  # gesture
+  pod 'FDFullscreenPopGesture'
+
+  # refresh
+  pod 'MJRefresh'
+
+  # hud
+  pod 'MBProgressHUD'
+  
+  # banner
+  pod 'FSPagerView'
+  
+  # yykit
+  pod 'YYKit'
+  
+  #
+  pod 'JPFPSStatus'
+
+
+end
