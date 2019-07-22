@@ -13,4 +13,4 @@ swift4.2仿写数字尾巴，仅用于交流学习，侵删
 
 ### 效果图
 
-![https://github.com/FMYang/Dgtle/blob/master/Dgtle/ScreenShots/ScreenShots.gif?raw=true](https://github.com/FMYang/Dgtle/blob/master/Dgtle/ScreenShots/ScreenShots.gif?raw=true)
+![https://github.com/FMYang/Dgtle/blob/master/Dgtle/Dgtle/ScreenShots/ScreenShots.gif?raw=true](https://github.com/FMYang/Dgtle/blob/master/Dgtle/Dgtle/ScreenShots/ScreenShots.gif?raw=true)
