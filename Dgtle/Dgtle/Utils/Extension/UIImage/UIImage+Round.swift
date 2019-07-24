@@ -11,10 +11,18 @@ import UIKit
 
 extension UIImage {
     func rounded(cornerRadius: Double) -> UIImage {
+        guard size != .zero else { return UIImage() }
         let rect = CGRect(origin: .zero, size: self.size)
+        print(size)
         UIGraphicsBeginImageContext(self.size)
-        UIBezierPath(roundedRect: rect, cornerRadius: rect.size.height/2).addClip()
+        let context = UIGraphicsGetCurrentContext()
+        let path = UIBezierPath(roundedRect: rect,
+                                byRoundingCorners: .allCorners,
+                                cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        context?.addPath(path.cgPath)
+        context?.clip()
         self.draw(in: rect)
+        context?.drawPath(using: .fillStroke)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image!

@@ -22,18 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = .white
         let rootVC = DGTabbarViewController()
         self.window?.rootViewController = rootVC
-        
-        KingfisherManager.shared.cache.maxMemoryCost = 30 * 1024 * 1024 // 30M
-        
         self.window?.makeKeyAndVisible()
         
-        JPFPSStatus.sharedInstance()?.open()
-        
+        commonConfig()
+
         return true
     }
 }
 
 extension AppDelegate {
-
+    func commonConfig() {
+        KingfisherManager.shared.cache.maxMemoryCost = 30 * 1024 * 1024 // 30M
+        JPFPSStatus.sharedInstance()?.open()
+    }
 }
 

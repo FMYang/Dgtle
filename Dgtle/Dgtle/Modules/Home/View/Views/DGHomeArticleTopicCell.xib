@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="294" id="KGk-i7-Jjw" customClass="DGHomeArticleTopicCell" customModule="Dgtle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="294"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="351" height="293.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRd-j7-9lI">
+                        <rect key="frame" x="0.0" y="0.0" width="351" height="10"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="IVm-Kq-FHm"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文章专题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECN-Dd-RJr">
+                        <rect key="frame" x="25" y="15" width="41" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="PDu-wG-xNN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="那些记录青春的私房照片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7B-sX-Zng">
+                        <rect key="frame" x="25" y="37" width="157.5" height="16.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bWI-aN-Nd9">
+                        <rect key="frame" x="10" y="73.5" width="331" height="200"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="UlY-bl-YDh"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rVa-5s-9hl">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HUg-rt-5qI">
+                        <rect key="frame" x="270" y="30" width="61" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="查看专题" image="arrow">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="W7B-sX-Zng" firstAttribute="top" secondItem="ECN-Dd-RJr" secondAttribute="bottom" constant="10" id="006-sc-gti"/>
+                    <constraint firstItem="HUg-rt-5qI" firstAttribute="top" secondItem="nRd-j7-9lI" secondAttribute="bottom" constant="20" id="GbN-vB-fzZ"/>
+                    <constraint firstItem="W7B-sX-Zng" firstAttribute="leading" secondItem="ECN-Dd-RJr" secondAttribute="leading" id="JEZ-1P-Kfs"/>
+                    <constraint firstAttribute="trailing" secondItem="nRd-j7-9lI" secondAttribute="trailing" id="Ozf-RT-aiJ"/>
+                    <constraint firstItem="nRd-j7-9lI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Pr6-YP-m5s"/>
+                    <constraint firstAttribute="bottom" secondItem="bWI-aN-Nd9" secondAttribute="bottom" constant="20" id="ZP8-mX-2AV"/>
+                    <constraint firstItem="bWI-aN-Nd9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="b6V-S1-EkJ"/>
+                    <constraint firstItem="nRd-j7-9lI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bUn-I6-2nc"/>
+                    <constraint firstItem="bWI-aN-Nd9" firstAttribute="top" secondItem="W7B-sX-Zng" secondAttribute="bottom" constant="20" id="dWg-mw-ySI"/>
+                    <constraint firstItem="ECN-Dd-RJr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="lRZ-F0-0Li"/>
+                    <constraint firstAttribute="trailing" secondItem="bWI-aN-Nd9" secondAttribute="trailing" constant="10" id="nmX-Of-5To"/>
+                    <constraint firstItem="ECN-Dd-RJr" firstAttribute="top" secondItem="nRd-j7-9lI" secondAttribute="bottom" constant="5" id="yaU-kr-zdh"/>
+                    <constraint firstAttribute="trailing" secondItem="HUg-rt-5qI" secondAttribute="trailing" constant="20" id="zeM-gs-foq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="checkTopicButton" destination="HUg-rt-5qI" id="vf8-b6-zrc"/>
+                <outlet property="collectionView" destination="bWI-aN-Nd9" id="ny8-4g-fKG"/>
+                <outlet property="titleLabel" destination="W7B-sX-Zng" id="JIe-aT-8gz"/>
+                <outlet property="topicTypeLabel" destination="ECN-Dd-RJr" id="pOH-6g-LIw"/>
+            </connections>
+            <point key="canvasLocation" x="162.40000000000001" y="188.00599700149925"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow" width="7" height="12"/>
+    </resources>
+</document>

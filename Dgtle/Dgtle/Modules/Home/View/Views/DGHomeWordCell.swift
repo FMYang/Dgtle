@@ -1,19 +1,19 @@
 //
-//  DGWhaleNewsWordCell.swift
+//  DGHomeWordCell.swift
 //  Dgtle
 //
-//  Created by yfm on 2019/7/21.
+//  Created by yfm on 2019/7/24.
 //  Copyright © 2019 yfm. All rights reserved.
 //
 
 import UIKit
 
-class DGWhaleNewsWordCell: UITableViewCell, DGWhaleNewsProtocol {
-    @IBOutlet weak var coverImageView: UIImageView!
+class DGHomeWordCell: UITableViewCell {
     @IBOutlet weak var maskImageView: UIImageView!
+    @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,12 +23,15 @@ class DGWhaleNewsWordCell: UITableViewCell, DGWhaleNewsProtocol {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
-    
-    func configCell(item: DGWhaleNewsItem) {
-        contentLabel.text = item.message
-        coverImageView.sp.setImageWithCrop(path: item.cover_name ?? "",
+}
+
+extension DGHomeWordCell: DGHomeCellProtocol {
+    func configCell(model: DGHomeListItem) {
+        titleLabel.text = model.title
+        pictureView.sp.setImageWithCrop(path: model.cover_name ?? "",
                                            radius: 10)
     }
-    
 }

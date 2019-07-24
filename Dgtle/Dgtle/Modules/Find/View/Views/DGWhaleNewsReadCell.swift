@@ -24,7 +24,7 @@ class DGWhaleNewsReadCell: UITableViewCell, DGWhaleNewsProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        maskImageView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        maskImageView.round(4, size: CGSize(width: screen_width-40, height: 180))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -43,7 +43,8 @@ class DGWhaleNewsReadCell: UITableViewCell, DGWhaleNewsProtocol {
         avatarView.sp.setImageWithRounded(path: item.avatar,
                                           cornerRadius: 20,
                                           targetSize: CGSize(width: 40, height: 40))
-        coverImageView.sp.setImageWithCrop(path: item.cover_name ?? "")
+        coverImageView.sp.setImageWithCrop(path: item.cover_name ?? "",
+                                           radius: 4)
 
     }
 }

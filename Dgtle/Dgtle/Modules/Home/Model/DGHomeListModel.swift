@@ -56,7 +56,7 @@ struct DGHomeListItem: HandyJSON {
     /// fid
     var fid: String?
     
-    /// aid
+    /// 文章id
     var aid: String?
     
     /// 发布时间
@@ -94,4 +94,40 @@ struct DGHomeListItem: HandyJSON {
     
     /// 类型id
     var typeid: String?
+    
+    var attach_count: Int?
+    
+    var attachment: [String: String]?
+    
+    var post_comment_count: String?
+    
+    var forum_name: String?
+    
+    var reading_unit: String?
+    
+    var reading_num: String?
+    
+    var cover_name: String?
+    
+    var message: String?
+    
+    var topic_group: DGHomeTopicGroupModel?
+    
+    var topic_article: DGHomeTopicArticleModel?
+}
+
+// 兴趣专题
+struct DGHomeTopicGroupModel: HandyJSON {
+    var list: [DGHomeListItem]?
+}
+
+// 文章专题
+struct DGHomeTopicArticleModel: HandyJSON {
+    var list: [DGHomeTopicArticleItem]?
+}
+
+struct DGHomeTopicArticleItem: HandyJSON {
+    var title: String?
+    var pic: String?
+    var summary: String?
 }

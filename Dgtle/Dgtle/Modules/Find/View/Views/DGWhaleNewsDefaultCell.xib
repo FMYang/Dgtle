@@ -69,7 +69,7 @@
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wwo-71-xWl">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_good" translatesAutoresizingMaskIntoConstraints="NO" id="wwo-71-xWl">
                         <rect key="frame" x="30" y="210" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="WdL-rv-sd1"/>
@@ -82,7 +82,7 @@
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hor-Jm-1Y9">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_comment" translatesAutoresizingMaskIntoConstraints="NO" id="hor-Jm-1Y9">
                         <rect key="frame" x="88" y="210" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="CAB-dB-gv2"/>
@@ -149,4 +149,8 @@
             <point key="canvasLocation" x="217.59999999999999" y="109.74512743628186"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="home_comment" width="20" height="20"/>
+        <image name="home_good" width="20" height="20"/>
+    </resources>
 </document>

@@ -10,13 +10,9 @@ import Foundation
 import Moya
 
 enum HomeApi {
-    // http://api.dgtle.com/api.php?actions=diydata&apikeys=DGTLECOM_APITEST1&bid=274&charset=UTF8&dataform=json&inapi=json&modules=portal&platform=ios&swh=480x800&timestamp=1563084540&token=b9e99427d666200fe8097ad4db7b51db&version=3.9.6
     case banner
-    
-    // https://api.yii.dgtle.com/v2/app/home?version=3.9.6&ad=1&dateline=0&live=1&page=1&perpage=18&setup=
+    case word
     case list(page: Int)
-    
-    // http://api.dgtle.com/api.php?actions=view&aid=29122&apikeys=DGTLECOM_APITEST1&charset=UTF8&dataform=json&inapi=json&modules=portal&platform=ios&swh=480x800&timestamp=1563123498&token=772130315a9d6911fbeeef41c4c2aac1&version=3.9.6
     case detail(aid: String)
 }
 
@@ -25,6 +21,8 @@ extension HomeApi: DGTarget {
         switch self {
         case .banner:
             return URL(string: "http://api.dgtle.com/api.php?actions=diydata&apikeys=DGTLECOM_APITEST1&bid=274&charset=UTF8&dataform=json&inapi=json&modules=portal&platform=ios&swh=480x800&timestamp=1563084540&token=b9e99427d666200fe8097ad4db7b51db&version=3.9.6")!
+        case .word:
+            return URL(string: "https://api.yii.dgtle.com/v2/app/word?version=3.9.6")!
         case let .list(page):
             return URL(string: "https://api.yii.dgtle.com/v2/app/home?version=3.9.6&ad=1&dateline=0&live=1&page=\(page)&perpage=18&setup=")!
         case let .detail(aid):
@@ -33,17 +31,11 @@ extension HomeApi: DGTarget {
     }
 
     var params: [String : Any]? {
-        switch self {
-        case .banner, .list, .detail:
-            return [:]
-        }
+        return [:]
     }
 
     var path: String {
-        switch self {
-        case .banner, .list, .detail:
-            return ""
-        }
+        return ""
     }
     
     var moyaMethod: Moya.Method {

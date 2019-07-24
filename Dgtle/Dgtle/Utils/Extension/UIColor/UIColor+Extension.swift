@@ -45,8 +45,7 @@ extension UIColor {
     ///
     /// - Parameter color: color
     /// - Returns: image
-    static func createImage(color: UIColor) -> UIImage? {
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+    static func createImage(color: UIColor, rect: CGRect) -> UIImage? {
         UIGraphicsBeginImageContext(rect.size)
         let ctx = UIGraphicsGetCurrentContext()
         ctx?.setFillColor(color.cgColor)

@@ -50,6 +50,27 @@ extension NamespaceWrapper where Base: UIImageView {
         }
     }
     
+    func setImageWithCrop(path: String,
+                          radius: Double) {
+        if let url = URL(string: path) {
+            wrappedValue.kf.setImage(with: url,
+                                     placeholder: UIImage(named: "default"),
+                                     options: [],
+                                     progressBlock: nil) { (img, _, _, _) in
+                                        let targetSize = self.wrappedValue.bounds.size
+                                        queue.async {
+                                            if img?.size != .zero {
+                                                let cropImage = img?.crop(toSize: targetSize)
+                                                DispatchQueue.main.async {
+                                                    self.wrappedValue.image = cropImage?.rounded(cornerRadius: radius)
+                                                }
+                                            }
+                                        }
+                                        
+            }
+        }
+    }
+    
 
     /// set image and rounded
     ///

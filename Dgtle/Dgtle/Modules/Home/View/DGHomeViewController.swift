@@ -80,15 +80,21 @@ class DGHomeViewController: UIViewController {
         let view = TDRefreshTableView(frame: .zero, style: .grouped)
         view.delegate = self
         view.dataSource = self
-        view.sp.registerCellFromNib(cls: DGHomeItemCell.self)
         view.estimatedRowHeight = 400
         view.separatorStyle = .none
+        view.sp.registerCellFromNib(cls: DGHomeNewsCell.self)
+        view.sp.registerCellFromNib(cls: DGHomeArticleTopicCell.self)
+        view.sp.registerCellFromNib(cls: DGHomeArticleCell.self)
+        view.sp.registerCellFromNib(cls: DGHomeGroupCell.self)
+        view.sp.registerCellFromNib(cls: DGHomeNewsReadCell.self)
+        view.sp.registerCellFromNib(cls: DGHomeWordCell.self)
         view.refreshDelegate = self
         view.sp.addHeader()
         view.sp.addFooter()
         return view
     }()
     
+    // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -167,13 +173,12 @@ class DGHomeViewController: UIViewController {
     }
     
     func fetchList() {
-        viewModel.fetchList(page: self.page)
+        viewModel.fetchData(page: self.page)
             .subscribe(onNext: { [weak self] (result) in
                 if self?.page == 1 {
-                    self?.datasource = result?.list ?? []
-                } else {
-                    self?.datasource += result?.list ?? []
+                    self?.datasource.removeAll()
                 }
+                self?.datasource += result
                 self?.page += 1
                 self?.tableView.reloadData()
                 self?.tableView.endRefresh()
@@ -192,9 +197,11 @@ extension DGHomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.sp.dequeueReuseCell(DGHomeItemCell.self, indexPath: indexPath)
-        cell.configCell(model: datasource[indexPath.row])
-        return cell
+        let model = datasource[indexPath.row]
+        let type = DGHomeCellType(rawValue: model.type ?? "news") ?? .news
+        let cell = DGHomeListCell.cell(tableView: tableView, type: type, indexPath: indexPath)
+        cell.configCell(model: model)
+        return cell as! UITableViewCell
     }
 }
 
