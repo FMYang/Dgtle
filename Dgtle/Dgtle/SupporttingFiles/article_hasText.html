@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title></title>
+<meta name="Generator" content="Cocoa HTML Writer">
+<meta name="CocoaVersion" content="1187.34">
+<style type="text/css">
+    * {margin:0; padding:0px}
+body { color:#4b4c4c !important; padding:0 0 0px 0; margin: 0;background: #eeeeee;}
+font { color:#4b4c4c !important; background-color: transparent !important;}
+div#v-main {width:<!-- img size -->;font-size:<!-- font size -->px;line-height:1.5;margin:0 auto;background:#FFFFFF;word-wrap:break-word;box-shadow: 0px 3px 7px -2px #BCBCBC; padding: 0 10px;}
+div#v-main a {color:#4b4c4c; }
+div#v-titleimage {width:<!-- device size -->; margin:0px auto;background: #fff}
+
+iframe {<!-- vedio margin -->;width:300px;max-width:300px !important;height:auto;}
+    img {max-width:<!-- img size --> !important; height:auto !important;}
+    img#titleimage {width:<!-- device size -->; max-width:<!-- device size --> !important;}
+    
+    div#v-titleblock {width:<!-- device size -->;margin:0 auto; padding-top: 0px;background:#FFFFFF;}
+    div.title_separator { background: url("content_title_separator.png") no-repeat left center; height: 20px; padding:0 10px; clear: both;}
+    div.title_separator span {font-size: 11px; background-color: #FFFFFF; color:#828282;}
+    div#title {margin-left:10px; color:#404040; width:<!-- title width -->px; font-size: <!-- title font size -->px; font-weight:bold; height:<!-- title height -->px;  text-overflow:ellipsis; overflow:hidden; display: -webkit-box; -webkit-box-orient: horizontal;-webkit-box-align: center; float:left;}
+    div#subtitle {text-align: <!-- subtitle align -->; color:#909090; margin-left:10px; padding: 6px 0 0 0; font-size: 12px; width:<!-- title width -->px; float:left;}
+    
+    div#avatar {width:35px; height:35px; float:left; padding-left:10px;}
+    div#avatar img {width:35px; height:35px; border-radius: 3px;}
+    #commentBtn { width: 100%; height: 35px; line-height: 15px; font-size:12px;padding: 10px 0; border:none;text-align: center; color: #fff;background: #469de6; box-shadow: 0px 1px 7px #BCBCBC;}
+    
+    @media only screen and (max-width: 320px) {
+        div.title_separator { background: url("content_title_separator.png") no-repeat center center; -webkit-background-size: <!-- device size --> 1px; -moz-background-size: <!-- device size --> 1px; background-size: <!-- device size --> 1px; }
+    }
+  @media only screen and (min-width: 321px) {
+    div.title_separator { background: url("content_title_separator@2x.png") no-repeat center center; -webkit-background-size: <!-- device size --> 1px; -moz-background-size: <!-- device size --> 1px; background-size: <!-- device size --> 1px;}
+  }
+
+    @media only screen and (max-width: 320px) {
+        div.app_image_layer { background: url("app_transparent_layer.png") no-repeat left center;}
+    }
+    @media only screen and (min-width: 321px) {
+        div.app_image_layer { background: url("app_transparent_layer@2x.png") no-repeat left center;}
+    }
+
+    .tra_hd {
+        margin-left: 5px;
+        width: 310px;
+        height: 40px;
+        background: #eeeeee;
+        border-bottom: 5px solid #dddddd;
+        line-height: 45px;
+        text-indent: 15px;
+    }
+    .mbm {
+        margin-bottom: 10px !important;
+    }
+    .cgtl {
+        overflow: hidden;
+    }
+    
+    th {
+        text-align: right;
+        padding-left: 5px;
+        width: 120px;
+        font-size: 14px;
+    }
+    td {
+        font-size: 13px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    table {
+        empty-cells: show;
+        border-collapse: collapse;
+        width: 310px;
+        margin-left: 5px;
+    }
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+        border-bottom: 1px dashed #cccccc;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    hr {
+        border-top:1px dotted #c1c7cf;
+        border-bottom:2px solid #fff;
+        background:none;
+        height:0;
+        margin:0;
+        padding:0;
+    }
+
+#v-article {
+    margin-top: 5px;
+    padding-top:10px;
+    padding-bottom:10px;
+
+    background-color:#FFF;
+}
+.title h2 {
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right:20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #9a9a9a;
+    font-size:16px;
+}
+.title {
+    margin-bottom: 10px;
+}
+
+.articles {
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+.article-image {
+    margin-bottom: 5px;
+}
+.article-image img{
+    width: 100%;
+}
+.article-title {
+    margin-bottom: 15px;
+}
+.article-title h3 {
+    font-size: 16px;
+}
+.article-title h3 a {
+    text-decoration: none;
+    color: #555;
+}
+#v-other-articles {
+    margin-top: 5px;
+    padding-top:5px;
+    padding-bottom:10px;
+    background-color:#FFF;
+}
+#v-other-articles .title h2 {
+    padding: 5px 20px;
+    border-bottom: none;
+    color: #9a9a9a;
+}
+#v-other-articles .title {
+    
+    margin-bottom: 7px;
+    color: #4e5053;
+}
+
+.o-articles {
+    padding-left: 20px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.o-articles .o-article {
+    margin-bottom: -1px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+.o-article .o-article-title {
+    float: right;
+    width: 100%;
+    margin-right: 50px;
+    border-right: 2px solid #f0f0f0;
+}
+.o-article h3 {
+    position: relative;
+    height: 50px;
+    padding-right: 5px;
+    font-size: 14px;
+    line-height: 25px;
+}
+.o-article h3 a {
+    position: absolute;
+    top: 50%;
+    margin-left: 52px;
+    color: #555;
+    padding-right: 5px;
+
+    font-size: 16px;
+    text-decoration: none;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.o-article-title {
+}
+.o-article-recomment {
+    float: right;
+    width: 50px;
+    border-left: 2px solid #f0f0f0;
+    text-align: center;
+    margin-left: -100%;
+}
+.o-article-recomment img {
+    width: 15px;
+    margin-bottom: 2px;
+}
+.o-article-recomment .recomment {
+    margin-top: 4px;
+}
+.o-article-recomment .o-article-recomment-num {
+    color: #9a9a9a;
+    font-family: arial;
+}
+.readmore {
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.readmore a {
+    text-decoration: none;
+    color: #555;
+}
+.separationline{
+    height:20px;
+    background:#E6E7EB
+}
+.quote {
+    border-left: 2px solid #57ADFD;
+    padding: 10px 10px;
+    margin: 15px;
+    background: none repeat scroll 0% 0% #FDFDFD;
+    overflow: hidden;
+    color: #666;
+    line-height: 1.8em;
+
+}
+.quote img{max-width:<!-- quoteimg size --> !important; height:auto !important;}
+ul{padding-left:30px}
+ ul li{list-style-type: disc;}
+ 
+.article_end{padding:7px 12px;border:1px solid #aeaeae; font-size:15px;text-align: center;color:#aeaeae ;width: 70px;margin: 0 auto;border-radius: 4px  }
+#author_info{background:#FFFFFF;border-left: 4px solid #469de6;padding: 12px;box-shadow: 0px 1px 7px #BCBCBC; background: url(author_bg.png);position: relative;margin-top: 10px;}
+#author_info .author{width: 100%; height:35px;margin: 17px 0;}
+#author_info .author img{width: 35px; height:35px; border-radius:50px;float: left; }
+#author_info .author span{float: left; margin-top: 9px; font-size: 18px; margin-left: 12px;color: #404040}
+#author_info .sign{ width: 100%;font-size: 12px;color:#9a9a9a;white-space: nowrap;overflow-x:hidden;}
+#author_info .follow{position: absolute;top: 46px;right: 23px;font-size: 15px;color: #fff;background-color: #469de6;padding:5px 17px;border-radius: 4px}
+#comment{background:#FFFFFF;box-shadow: 0px 1px 7px #BCBCBC;margin-top: 10px;color: #404040;}
+#comment .comment_title {font-size:12px;color:#404040;border-bottom:1px solid #bebebe;padding:7px 12px}
+#comment .comment_title span{padding-left: 5px;color:  #469de6}
+#comment .comment_list{padding:0 12px }
+#comment .comment_list div[class^="comment_"]{padding: 12px 0;border-bottom:1px solid #e1e4e9 ;}
+#comment .comment_list div[class^="comment_"] .avatar{width: 32px; height:32px; border-radius:50px;display: inline-block;vertical-align: top;  }
+#comment .comment_list div[class^="comment_"] .avatar img{width: 32px; height:32px; border-radius:50px;}
+#comment .comment_list div[class^="comment_"] .box{width: 83%; border-radius:50px;display: inline-block; padding-left: 12px }
+#comment .comment_list div[class^="comment_"] .box .author_date {color:#9a9a9a;width:100%;padding-bottom:12px;font-size:11px;height:12px;}
+#comment .comment_list div[class^="comment_"] .box .content {line-height: 17px;font-size: 14px;}
+#comment .comment_list div[class^="comment_"] .box .attachimglist{width: 100%;height: auto;margin-top: 12px;} 
+#comment .comment_list div[class^="comment_"] .box .attachimg {width: 60px; height: 60px; background-color: #EEE; margin-right: 16px; margin-bottom: 16px; overflow: hidden;float: left; }
+#comment .comment_list div[class^="comment_"] .box .attachimg img{ width: auto; height: 60px;}
+
+#recommends{background:#FFFFFF;box-shadow: 0px 1px 7px #BCBCBC;position: relative;margin-top: 10px;}
+#recommends .recommends_title{border-left: 4px solid #469de6;padding: 12px;line-height: 13px;}
+#recommends div[class^="recommend_"]{width: 100%;position: relative;box-shadow: 0px 1px 7px #BCBCBC;height: 112px;overflow: hidden; }
+#recommends div[class^="recommend_"] img{width: 100%}
+#recommends div[class^="recommend_"] .mask{position: absolute; top: 0px; width: 100%; height: 112px; background: rgba(0, 0, 0, 0.5);}
+#recommends div[class^="recommend_"] .subject{position: absolute;top: 0px;width: 90%;padding: 0 2%;height: 112px; line-height: 20px;display:table;z-index: 1; text-shadow: 1px 1px 1px #000; font-size: 15px;color: #fff}
+#recommends div[class^="recommend_"] .subject div{display: table-cell;vertical-align: middle;text-align: center;}
+.footer_logo{text-align: center;margin-top: 10px background:#fff}
+.priceInfo{width: 320px;margin: 0 auto; background: #fff}
+
+</style>
+<script type="text/JavaScript">
+    function clickElement( e ) {
+        e = e || window.event;
+        var obj = e.target;
+        if (obj.nodeName == 'IMG') {
+        }
+        else if (obj.nodeName == 'A') {
+        }
+        else if (obj.nodeName == 'BUTTON' && obj.id == 'commentBtn') {
+            var href = "dgtle://showcomment";
+            location.href = href;
+        }
+        else {
+            var href = "dgtle://clickOnBody";
+            location.href = href;
+        }
+    }
+    
+    function changeFontSize(fontSize) {
+        var obj = document.getElementById("v-main");
+        obj.style.fontSize = fontSize + 'px';
+    }
+    
+    function showComment() {
+        
+    }
+   function clickAvatar() {
+    var href = "dgtle://clickAvatar";
+    location.href = href;
+   }
+
+    window.onload = function() {
+        var el = document.getElementById("v-main");
+        el.addEventListener("click", clickElement);
+    }
+</script>
+    
+<link href="pricetable.css" rel="stylesheet">
+    
+</head>
+<body>
+<div id="v-titleimage">
+<!-- title image -->
+</div>
+    
+<div id="v-titleblock" >
+    <div  class="title_separator">
+        <span><!-- article info --></span>
+    </div>
+    <div id="titleblock">
+        <!-- article avatar -->
+        <!-- article title -->
+        <!-- article subtitle -->
+        <div style="clear:both; height:1px"></div>
+    </div>
+    <div  class="title_separator"></div>
+</div>
+    
+    <div class="priceInfo">
+
+<!-- article priceInfo-->
+    </div>
+
+
+
+<div id="v-main">
+    <!-- article content -->
+
+    <br/>
+    <!-- special_pollDict -->
+    <br/>
+    
+    <br/>
+    <div class="article_end">全文完</div>
+    <br/>
+</div>
+<div id="author_info">
+    <div style="font-size:12px;color:#404040;font-weight: 700;">文章作者</div>
+    <div class="author"><img src="http://www.dgtle.com/uc_server/data/avatar/000/01/15/49_avatar_middle.jpg"><span>林师兄</span></div>
+    <div class="sign"><p>“Simple Life.”“Simple Life.”“Simple Life.”“Simple Life.”“Simple Life.”</p></div>
+    <div class="follow">关注</div>
+</div>
+<div id="comment" >
+    <div class="comment_title">最新评论<span style="vertical-align: middle;">88</span></div>
+    <div class="comment_list">
+        <div class="comment_1">
+            <div class="avatar"><img src="http://www.dgtle.com/uc_server/data/avatar/000/01/15/49_avatar_middle.jpg"></div>
+            <div class="box">
+                <div class="author_date"><span style="float:left">林师兄</span><span style="float:right">8 分钟前</span></div>
+                <div class="content"><p>挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉</p></div>
+            </div>
+        </div>
+         <div class="comment_2">
+            <div class="avatar"><img src="http://www.dgtle.com/uc_server/data/avatar/000/01/15/49_avatar_middle.jpg"></div>
+            <div class="box">
+                <div class="author_date"><span style="float:left">林师兄</span><span style="float:right">8 分钟前</span></div>
+                <div class="content">
+                    <div class="quote">
+                        挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉
+                    </div>
+                     <p>挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉</p></div>
+            </div>
+        </div>
+         <div class="comment_3">
+            <div class="avatar"><img src="http://www.dgtle.com/uc_server/data/avatar/000/01/15/49_avatar_middle.jpg"></div>
+            <div class="box">
+                <div class="author_date"><span style="float:left">林师兄</span><span style="float:right">8 分钟前</span></div>
+                <div class="content"><p>挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉挺骚气的鼠标，没用过，不知道打游戏是什么感觉</p></div>
+                <div class="attachimglist">
+                    <div class="attachimg"><img id="aimg_1961018" aid="1961018" src="http://img.dgtle.com/forum/201509/16/232848uwrnpaokpqnlywr9.jpg!240px" ></div>
+                    <div class="attachimg"><img id="aimg_1961018" aid="1961018" src="http://img.dgtle.com/forum/201509/16/232848uwrnpaokpqnlywr9.jpg!240px" ></div>
+                    <div class="attachimg"><img id="aimg_1961018" aid="1961018" src="http://img.dgtle.com/forum/201509/16/232848uwrnpaokpqnlywr9.jpg!240px" ></div>
+                    <div class="attachimg"><img id="aimg_1961018" aid="1961018" src="http://img.dgtle.com/forum/201509/16/232848uwrnpaokpqnlywr9.jpg!240px" ></div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div style="text-align:center; padding:17px;box-shadow: 0px 1px 7px #BCBCBC;">
+            <button id="commentBtn" >查看所有<span style="padding:0 10px">99</span>条评论</button>
+        </div>
+</div>
+<div id="recommends">
+    <div class="recommends_title">
+        <div style="font-size:12px;color:#404040;font-weight: 700;">尾巴推荐</div>
+        <div style="font-size:8px;color:#9a9a9a;">也许你还会喜欢这些文章</div>
+    </div>
+    <div class="recommend_1">
+        <img src="http://img.dgtle.com/portal/201509/08/171601i9s97nx6embzxxpm.jpg" alt="">
+        <div class="subject"><div>「尾巴开箱」 头戴式索尼耳机 h.ear on MDR-100AAP</div></div>
+        <div class="mask"></div>
+    </div>
+    <div class="recommend_1">
+        <img src="http://img.dgtle.com/portal/201509/08/171601i9s97nx6embzxxpm.jpg" alt="">
+        <div class="subject"><div>「尾巴开箱」 头戴式索尼耳机</div></div>
+        <div class="mask"></div>
+    </div>
+    <div class="recommend_1">
+        <img src="http://img.dgtle.com/portal/201509/08/171601i9s97nx6embzxxpm.jpg" alt="">
+        <div class="subject"><div>「尾巴开箱」 头戴式索尼耳机 h.ear on MDR-100AAPh.ear on MDR-100AAPh.ear on MDR-100AAP</div></div>
+        <div class="mask"></div>
+    </div>
+</div>
+
+<!-- relative articles -->
+<!-- other articles -->
+<!-- separationline -->
+<div class="footer_logo"><img src="./bottom_log.png"></div>
+</body>
+</html>

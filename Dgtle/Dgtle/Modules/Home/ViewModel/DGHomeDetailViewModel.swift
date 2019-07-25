@@ -9,13 +9,9 @@
 import Foundation
 
 class DGHomeDetailViewModel {
-    func fetchDetail(aid: String) -> Observable<String> {
+    func fetchDetail(aid: String) -> Observable<DGArticleModel?> {
         return  Network.request(HomeApi.detail(aid: aid))
             .asObservable()
-            .map { response -> String in
-                let data = JSON(response.data)
-                let content = data["returnData"]["article_content"]["content"].stringValue
-                return content
-            }
+            .mapObject(type: DGArticleModel.self)
     }
 }

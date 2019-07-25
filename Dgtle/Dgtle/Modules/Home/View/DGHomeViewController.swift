@@ -126,7 +126,7 @@ class DGHomeViewController: UIViewController {
     }
     
     @objc func searchAction() {
-        
+        DGSearchView.show()
     }
     
     @objc func showOrHideMenu() {

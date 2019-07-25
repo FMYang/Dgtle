@@ -26,6 +26,7 @@ class DGHomeTopicCollectionCell: UICollectionViewCell {
     
     func configCell(model: DGHomeListItem) {
         maskImageView.isHidden = false
+        authorLabel.isHidden = false
         maskImageView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
 
         let urls = model.attachment?.values.map { return $0 }
@@ -41,8 +42,9 @@ class DGHomeTopicCollectionCell: UICollectionViewCell {
     }
     
     func configCell(article: DGHomeTopicArticleItem) {
+        authorLabel.isHidden = true
         maskImageView.isHidden = true
         pictureView.sp.setImageWithCrop(path: article.pic ?? "")
-        titleLabel.text = article.summary
+        titleLabel.text = article.title
     }
 }

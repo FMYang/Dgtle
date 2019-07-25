@@ -13,10 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DGHomeTopicCollectionCell" customModule="Dgtle" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="317" height="195"/>
+            <rect key="frame" x="0.0" y="0.0" width="317" height="218"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="317" height="195"/>
+                <rect key="frame" x="0.0" y="0.0" width="317" height="218"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D9U-I0-kcn">
@@ -25,10 +25,10 @@
                             <constraint firstAttribute="height" constant="140" id="VKq-Ue-Buu"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="完美的性能小钢炮" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QE-o9-rh3">
-                        <rect key="frame" x="20" y="150" width="277" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="完美的性能小钢炮完美的性能小钢炮完美的性能小钢炮完美的性能小钢炮完美的性能小钢炮完美的性能小钢炮" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QE-o9-rh3">
+                        <rect key="frame" x="20" y="150" width="277" height="38"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="15" id="Vtt-rd-iBP"/>
+                            <constraint firstAttribute="height" constant="38" id="New-zg-yNT"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,7 +63,7 @@
                 <constraint firstItem="D9U-I0-kcn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Do5-3U-OAK"/>
                 <constraint firstItem="D9U-I0-kcn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FOD-Bv-bbR"/>
                 <constraint firstItem="AqA-i8-lOi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GE9-4U-HIG"/>
-                <constraint firstAttribute="bottom" secondItem="8QE-o9-rh3" secondAttribute="bottom" constant="30" id="NYJ-tx-J9o"/>
+                <constraint firstAttribute="bottom" secondItem="8QE-o9-rh3" secondAttribute="bottom" priority="999" constant="30" id="NYJ-tx-J9o"/>
                 <constraint firstItem="8QE-o9-rh3" firstAttribute="top" secondItem="D9U-I0-kcn" secondAttribute="bottom" constant="10" id="Oke-6G-bub"/>
                 <constraint firstItem="RJs-Du-UJa" firstAttribute="bottom" secondItem="AqA-i8-lOi" secondAttribute="bottom" constant="-10" id="SQB-68-q0K"/>
                 <constraint firstAttribute="trailing" secondItem="AqA-i8-lOi" secondAttribute="trailing" id="dW4-bK-u5L"/>
@@ -73,7 +73,7 @@
                 <constraint firstItem="02V-3P-l26" firstAttribute="leading" secondItem="RJs-Du-UJa" secondAttribute="trailing" constant="10" id="rM3-dt-c6K"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="317" height="187"/>
+            <size key="customSize" width="317" height="210"/>
             <connections>
                 <outlet property="authorLabel" destination="02V-3P-l26" id="iiQ-lm-klf"/>
                 <outlet property="avatarView" destination="RJs-Du-UJa" id="uPR-sJ-0yN"/>
@@ -81,7 +81,7 @@
                 <outlet property="pictureView" destination="D9U-I0-kcn" id="9CQ-fK-rak"/>
                 <outlet property="titleLabel" destination="8QE-o9-rh3" id="9nY-ud-84T"/>
             </connections>
-            <point key="canvasLocation" x="133.59999999999999" y="129.98500749625188"/>
+            <point key="canvasLocation" x="133.59999999999999" y="140.32983508245877"/>
         </collectionViewCell>
     </objects>
 </document>

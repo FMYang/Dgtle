@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title></title>
+<meta name="Generator" content="Cocoa HTML Writer">
+<meta name="CocoaVersion" content="1187.34">
+<style type="text/css">
+    * {margin:0; padding:0}
+body {background:#FFFFFF; color:#4b4c4c !important; padding:0 0 0px 0; margin: 0;background: #FFFFFF;}
+font { color:#404040 !important; background-color: transparent !important;}
+div#v-main {width:<!-- img size -->;font-size:<!-- font size -->px;line-height:1.5;margin:0 auto;background:#FFFFFF;word-wrap:break-word;}
+div#v-main a {color:#4b4c4c; }
+div#v-titleimage {width:<!-- device size -->; margin:0 auto;}
+
+iframe {width:auto; height:auto;}
+    img {max-width:<!-- img size -->  !important; height:auto !important;}
+    img#titleimage {width:<!-- device size -->; max-width:<!-- device size --> !important;}
+    
+    div#v-titleblock {width:<!-- device size -->;margin:0 auto; padding-top: 0px;}
+    div.title_separator { background: url("content_title_separator.png") no-repeat left center; height: 20px; padding:0 10px; clear: both;}
+    div.title_separator span {font-size: 11px; background-color: #FFFFFF; color:#828282;}
+    div#title {margin-left:10px; color:#4e5053; width:<!-- title width -->px; font-size: <!-- title font size -->px; font-weight:bold; height:<!-- title height -->px;  text-overflow:ellipsis; overflow:hidden; display: -webkit-box; -webkit-box-orient: horizontal;-webkit-box-align: center; float:left;}
+    div#subtitle {text-align: <!-- subtitle align -->; color:#909090; margin-left:10px; padding: 6px 0 0 0; font-size: 12px; width:<!-- title width -->px; float:left;}
+    
+    div#avatar {width:35px; height:35px; float:left; padding-left:10px;}
+    div#avatar img {width:35px; height:35px; border-radius: 3px;}
+    #commentBtn { width: 140px; height: 30px; line-height: 30px; font-size:15px; border:none;  font-weight:bold; text-align: center; color: #fff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: -moz-linear-gradient(top, #4788c9 0%, #3e7fc4 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4788c9), color-stop(100%,#3e7fc4)); background: -webkit-linear-gradient(top, #4788c9 0%,#3e7fc4 100%); background: linear-gradient(to bottom, #4788c9 0%,#3e7fc4 100%); }
+    
+    
+    @media only screen and (max-width: 320px) {
+        div.title_separator { background: url("content_title_separator.png") no-repeat center center; -webkit-background-size: <!-- device size --> 1px; -moz-background-size: <!-- device size --> 1px; background-size: <!-- device size --> 1px; }
+    }
+@media only screen and (min-width: 321px) {
+    div.title_separator { background: url("content_title_separator@2x.png") no-repeat center center; -webkit-background-size: <!-- device size --> 1px; -moz-background-size: <!-- device size --> 1px; background-size: <!-- device size --> 1px;}
+}
+
+    .tra_hd {
+        margin-left: 5px;
+        width: 310px;
+        height: 40px;
+        background: #eeeeee;
+        border-bottom: 5px solid #dddddd;
+        line-height: 45px;
+        text-indent: 15px;
+    }
+    .mbm {
+        margin-bottom: 10px !important;
+    }
+    .cgtl {
+        overflow: hidden;
+    }
+    
+    th {
+        text-align: right;
+        padding-left: 5px;
+        width: 120px;
+        font-size: 14px;
+    }
+    td {
+        font-size: 13px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    table {
+        empty-cells: show;
+        border-collapse: collapse;
+        width: 310px;
+        margin-left: 5px;
+    }
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+        border-bottom: 1px dashed #cccccc;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    hr {
+        border-top:1px dotted #c1c7cf;
+        border-bottom:2px solid #fff;
+        background:none;
+        height:0;
+        margin:0;
+        padding:0;
+    }
+#v-article {
+    margin-top: 5px;
+    padding-top:10px;
+    padding-bottom:10px;
+    
+    background-color:#FFF;
+}
+.title h2 {
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right:20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #9c9c9c;
+    font-size:16px;
+}
+.title {
+    margin-bottom: 10px;
+}
+
+.articles {
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+.article-image {
+    margin-bottom: 5px;
+}
+.article-image img{
+    width: 100%;
+}
+.article-title {
+    margin-bottom: 15px;
+}
+.article-title h3 {
+    font-size: 16px;
+}
+.article-title h3 a {
+    text-decoration: none;
+    color: #555;
+}
+#v-other-articles {
+    margin-top: 5px;
+    padding-top:5px;
+    padding-bottom:10px;
+    background-color:#FFF;
+}
+#v-other-articles .title h2 {
+    padding: 5px 20px;
+    border-bottom: none;
+    color: #9a9a9a;
+}
+#v-other-articles .title {
+    
+    margin-bottom: 7px;
+    color: #4e5053;
+}
+
+.o-articles {
+    padding-left: 20px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.o-articles .o-article {
+    margin-bottom: -1px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+.o-article .o-article-title {
+    float: right;
+    width: 100%;
+    margin-right: 50px;
+    border-right: 2px solid #f0f0f0;
+}
+.o-article h3 {
+    position: relative;
+    height: 50px;
+    padding-right: 5px;
+    font-size: 14px;
+    line-height: 25px;
+}
+.o-article h3 a {
+    position: absolute;
+    top: 50%;
+    margin-left: 52px;
+    color: #555;
+    padding-right: 5px;
+    
+    font-size: 16px;
+    text-decoration: none;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.o-article-title {
+}
+.o-article-recomment {
+    float: right;
+    width: 50px;
+    border-left: 2px solid #f0f0f0;
+    text-align: center;
+    margin-left: -100%;
+}
+.o-article-recomment img {
+    width: 15px;
+    margin-bottom: 2px;
+}
+.o-article-recomment .recomment {
+    margin-top: 4px;
+}
+.o-article-recomment .o-article-recomment-num {
+    color: #9c9c9c;
+    font-family: arial;
+}
+.readmore {
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.readmore a {
+    text-decoration: none;
+    color: #555;
+}
+.separationline{
+    height:20px;
+    background:#E6E7EB
+}
+.quote {
+    border-left: 2px solid #57ADFD;
+    padding: 10px 10px;
+    margin: 15px;
+    background: none repeat scroll 0% 0% #FDFDFD;
+    overflow: hidden;
+    color: #666;
+    line-height: 1.8em;
+    
+}
+.quote img{max-width:<!-- quoteimg size --> !important; height:auto !important;}
+ul{padding-left:30px}
+ul li{list-style-type: disc;}
+
+</style>
+<script type="text/JavaScript">
+    function clickElement( e ) {
+        e = e || window.event;
+        var obj = e.target;
+        if (obj.nodeName == 'IMG') {
+        }
+        else if (obj.nodeName == 'A') {
+        }
+        else if (obj.nodeName == 'BUTTON' && obj.id == 'commentBtn') {
+            var href = "dgtle://showcomment";
+            location.href = href;
+        }
+        else {
+            var href = "dgtle://clickOnBody";
+            location.href = href;
+        }
+    }
+    
+    function changeFontSize(fontSize) {
+        var obj = document.getElementById("v-main");
+        obj.style.fontSize = fontSize + 'px';
+    }
+    
+    function showComment() {
+        
+    }
+   function clickAvatar() {
+    var href = "dgtle://clickAvatar";
+    
+    location.href = href;
+    }
+    window.onload = function() {
+        var el = document.getElementById("v-main");
+        el.addEventListener("click", clickElement);
+    }
+</script>
+    
+<link href="pricetable.css" rel="stylesheet">
+    
+</head>
+<body>
+<div id="v-titleimage">
+<!-- title image -->
+</div>
+
+<div id="v-appdetailblock" style="width: <!-- device size -->; height: <!-- device size -->">
+    <div style="background-image: url(./app_detail_background@2x.png);background-repeat: no-repeat; background-position: center; background-size:contain; width: 100%; height: 100%">
+        <div style="background-image: url(./app_transparent_layer@2x.png);background-repeat: no-repeat; background-position: center; background-size:contain; width: 100%; height: 100%">
+            <div style="width: 100%; height: 100%;">
+                <img src="./icon@2x.png" style="width: 70px; height: 70px; padding-top:<!-- padding top -->; display: block; margin-left: auto; margin-right: auto;" />
+                <div style="width: 90%; height: 40px; margin-top: 20px; text-align:center; margin-left: auto; margin-right: auto; line-height:20px;" id="App_brief" ><!-- app brief --></div>
+                <div style="-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; background-color:#57B73D; width: 70px; height: 31px; margin-top: 20px; text-align:center; margin-left: auto; margin-right: auto; line-height:31px; color:white" id="App_price"  onclick="javascript:window.open('<!-- app url -->')" ><!-- app price --></div>
+                <div style="width: 320px; height: 40px; display: block; margin-left: auto; margin-right: auto; margin-top: 20px; color:#929292;">
+                    <img src="./iphone@2x.png" style="width: 8px; height: 16px; padding-left: 30px;" / id="App_platform"> <!-- app platform -->
+                    <img src="./history@2x.png" style="width: 15px; height: 16px; padding-left: 15px;" id="App_ver"/> <!-- app ver -->
+                    <img src="./folders@2x.png" style="width: 15px; height: 13px; padding-left: 15px;" id="App_size"/> <!-- app size -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div id="v-titleblock">
+    <div style="margin:5px 0" class="title_separator">
+        <span><!-- article info --></span>
+    </div>
+    <div id="titleblock">
+        <!-- article avatar -->
+        <!-- article title -->
+        <!-- article subtitle -->
+        <div style="clear:both; height:1px"></div>
+    </div>
+    <div style="margin:4px 0" class="title_separator"></div>
+</div>
+    
+
+<!-- article priceInfo-->
+<br/>
+
+
+<div id="v-main">
+    <!-- article content -->
+    
+    <br/>
+    <!-- special_pollDict -->
+    <br/>
+    
+    <div style="text-align:center; padding-top:30px;padding-bottom:20px;">
+        <button id="commentBtn" >查看所有评论</button>
+    </div>
+</div>
+<!-- relative articles -->
+<!-- other articles -->
+<!-- separationline -->
+</body>
+</html>

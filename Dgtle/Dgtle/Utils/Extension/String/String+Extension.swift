@@ -37,6 +37,14 @@ extension String {
                           locale: nil) != nil
     }
     
+    static func toString(timeStamp: TimeInterval, format: String) -> String {
+        let date = Date(timeIntervalSince1970: timeStamp)
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        let str = formatter.string(from: date)
+        return str
+    }
+    
     /// 资讯类时间戳转字符串
     ///
     /// - Parameter timeStamp: 时间戳
