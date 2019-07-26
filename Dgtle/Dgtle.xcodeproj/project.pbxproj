@@ -55,6 +55,9 @@
 		885EE1D522DC40D4007F9CA9 /* DGInterestHotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EE1D422DC40D4007F9CA9 /* DGInterestHotViewModel.swift */; };
 		885EE1D722DC87CA007F9CA9 /* EmoKeyboard.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 885EE1D622DC87CA007F9CA9 /* EmoKeyboard.bundle */; };
 		885EE1DD22DC946B007F9CA9 /* EmoticonQQ.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 885EE1DC22DC946B007F9CA9 /* EmoticonQQ.bundle */; };
+		8895243922EADD5A00CA2562 /* author_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8895243822EADD5900CA2562 /* author_bg.png */; };
+		8895243B22EB1AB400CA2562 /* DGDetailBottomTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895243A22EB1AB400CA2562 /* DGDetailBottomTool.swift */; };
+		8895243D22EB1AC300CA2562 /* DGDetailBottomTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8895243C22EB1AC300CA2562 /* DGDetailBottomTool.xib */; };
 		889602A522E55CC8007A7E5B /* DGMineHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889602A322E55CC8007A7E5B /* DGMineHomeCell.swift */; };
 		889602A622E55CC8007A7E5B /* DGMineHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889602A422E55CC8007A7E5B /* DGMineHomeCell.xib */; };
 		889602A922E55EE5007A7E5B /* DGMineUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889602A722E55EE5007A7E5B /* DGMineUserInfoCell.swift */; };
@@ -174,6 +177,9 @@
 		885EE1D422DC40D4007F9CA9 /* DGInterestHotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGInterestHotViewModel.swift; sourceTree = "<group>"; };
 		885EE1D622DC87CA007F9CA9 /* EmoKeyboard.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EmoKeyboard.bundle; sourceTree = "<group>"; };
 		885EE1DC22DC946B007F9CA9 /* EmoticonQQ.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EmoticonQQ.bundle; sourceTree = "<group>"; };
+		8895243822EADD5900CA2562 /* author_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = author_bg.png; sourceTree = "<group>"; };
+		8895243A22EB1AB400CA2562 /* DGDetailBottomTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDetailBottomTool.swift; sourceTree = "<group>"; };
+		8895243C22EB1AC300CA2562 /* DGDetailBottomTool.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DGDetailBottomTool.xib; sourceTree = "<group>"; };
 		889602A322E55CC8007A7E5B /* DGMineHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGMineHomeCell.swift; sourceTree = "<group>"; };
 		889602A422E55CC8007A7E5B /* DGMineHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DGMineHomeCell.xib; sourceTree = "<group>"; };
 		889602A722E55EE5007A7E5B /* DGMineUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGMineUserInfoCell.swift; sourceTree = "<group>"; };
@@ -541,6 +547,8 @@
 				88C926BD22E83FFD003C9E15 /* DGHomeTopicCollectionCell.swift */,
 				88C926BE22E83FFD003C9E15 /* DGHomeTopicCollectionCell.xib */,
 				88C926C122E863B1003C9E15 /* DGSearchView.swift */,
+				8895243A22EB1AB400CA2562 /* DGDetailBottomTool.swift */,
+				8895243C22EB1AC300CA2562 /* DGDetailBottomTool.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -654,6 +662,7 @@
 		88EE61EE22D9B86500A7963C /* SupporttingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				8895243822EADD5900CA2562 /* author_bg.png */,
 				88C926CE22E9CB77003C9E15 /* jQuery.v1.8.3.min.js */,
 				88C926C722E9BDF7003C9E15 /* article_hasText.html */,
 				88C926C822E9BDF8003C9E15 /* article_old.html */,
@@ -897,6 +906,7 @@
 				88987FB822E44C00000D3F81 /* DGWhalePictureCell.xib in Resources */,
 				88EE61DE22D9AD2A00A7963C /* LaunchScreen.storyboard in Resources */,
 				88C926C922E9BDF8003C9E15 /* article_hasText.html in Resources */,
+				8895243D22EB1AC300CA2562 /* DGDetailBottomTool.xib in Resources */,
 				88C926CA22E9BDF8003C9E15 /* article_old.html in Resources */,
 				88A19D2C22E74C0E003CC61A /* DGHomeArticleTopicCell.xib in Resources */,
 				88A19D2822E74980003CC61A /* DGHomeArticleCell.xib in Resources */,
@@ -904,6 +914,7 @@
 				88C926C022E83FFD003C9E15 /* DGHomeTopicCollectionCell.xib in Resources */,
 				88C926B622E76749003C9E15 /* DGHomeNewsReadCell.xib in Resources */,
 				88C926C622E9BDEB003C9E15 /* app_article.html in Resources */,
+				8895243922EADD5A00CA2562 /* author_bg.png in Resources */,
 				88A19D3022E75352003CC61A /* DGHomeGroupCell.xib in Resources */,
 				88B5930522E4BF2500C1A17A /* DGWhaleNewsDefaultCell.xib in Resources */,
 				88C926C422E99B46003C9E15 /* article.html in Resources */,
@@ -1019,6 +1030,7 @@
 				883BD42722DAF98F007AF284 /* DGHomeViewModel.swift in Sources */,
 				88987FA122E1FE9A000D3F81 /* DGInterestEnum.swift in Sources */,
 				88C926C222E863B1003C9E15 /* DGSearchView.swift in Sources */,
+				8895243B22EB1AB400CA2562 /* DGDetailBottomTool.swift in Sources */,
 				88A19D1422E61E79003CC61A /* UIImageView+Round.swift in Sources */,
 				883BD46122DAFCA0007AF284 /* Namespace.swift in Sources */,
 				885EE1C722DC3741007F9CA9 /* DGInterestCellStyle4.swift in Sources */,

@@ -322,7 +322,8 @@ ul{padding-left:30px}
 #comment .comment_list div[class^="comment_"] .avatar{width: 34px; height:34px; border-radius:50px;display: inline-block;vertical-align: top;  }
 #comment .comment_list div[class^="comment_"] .avatar img{width: 34px !important; height:34px !important; border-radius:50px;}
 #comment .comment_list div[class^="comment_"] .box{width: 83%; border-radius:50px;display: inline-block; padding-left: 10px;padding-top:2px }
-#comment .comment_list div[class^="comment_"] .box .author_date {color:#9a9a9a;width:100%;padding-bottom:12px;font-size:11px;height:12px;}
+#comment .comment_list div[class^="comment_"] .box .author {color:#9a9a9a;width:100%;padding-bottom:14px;font-size:16px;height:12px;padding-right:20px;}
+#comment .comment_list div[class^="comment_"] .box .author_date {color:#9a9a9a;width:100%;padding-bottom:12px;font-size:11px;height:12px;float: right;}
 #comment .comment_list div[class^="comment_"] .box .author_date a {color:#9a9a9a;}
 #comment .comment_list div[class^="comment_"] .box .content {line-height: 17px;font-size: 14px;word-break:break-all;}
 #comment .comment_list div[class^="comment_"] .box .attachimglist{width: 100%;height: auto;margin-top: 12px;} 
@@ -406,6 +407,7 @@ ul{padding-left:30px}
    }
 
 window.onload = function () {
+    alert("============ window.onload ==============")
     var el = document.getElementById("v-body");
     el.addEventListener("click", clickElement);
     var dgiframe = document.getElementsByTagName('iframe');
@@ -510,21 +512,13 @@ function getLinkSRCAtPoint(x,y) {
 
     //图片裁剪
     function imgWidth ( obj ) {
-        alert("============== imgWidth ==============")
-        alert(jQuery(obj).find('img').length)
 <!--        var oImg = jQuery(obj).find('.imgBox').find('img');//获取图片-->
 <!--        var liWidth = jQuery(obj).find('.imgBox').width();//获取img外面一层div的宽度-->
 <!--        var liHei = jQuery(obj).find('.imgBox').height();//获取img外面一层div的高度-->
-        alert(jQuery(obj).find('.imgBox').find('img').length)
 
         var oImg = jQuery(obj).find('img');//获取图片
         var liWidth = screen.width;//jQuery(obj).width();//获取img外面一层div的宽度
         var liHei = jQuery(obj).height();//获取img外面一层div的高度
-
-        alert("width = " + liWidth)
-        alert("height = " + liHei)
-        alert("oImg = " + oImg.length)
-        alert("===============")
         //遍历图片
         oImg.each( function(){
                   var Img = jQuery(this);
@@ -546,10 +540,6 @@ function getLinkSRCAtPoint(x,y) {
         
         w=liWidth;
         h=liWidth/ImgWidth*ImgHei;
-        alert("imagewidth = " + ImgWidth)
-        alert("imageheight = " + ImgHei)
-        alert("w = " + w)
-        alert("h = " + h)
 <!--        if(h<liHei){-->
 <!--            w=liHei/ImgHei*ImgWidth;-->
 <!--            h=liHei;-->
@@ -557,9 +547,6 @@ function getLinkSRCAtPoint(x,y) {
 <!--        }else{-->
 <!--            t=-(liWidth/ImgWidth*ImgHei-liHei)/2;-->
 <!--        }-->
-
-        alert("finalW = " + w)
-        alert("finalH = " + h)
         Img.css('width', w);
         Img.css('height', h);
         Img.css('margin-top', t);

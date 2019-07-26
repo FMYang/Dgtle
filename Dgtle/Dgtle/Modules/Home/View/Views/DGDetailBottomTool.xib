@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DGDetailBottomTool" customModule="Dgtle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="319" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hka-RI-V0o">
+                    <rect key="frame" x="10" y="10" width="174" height="25"/>
+                    <subviews>
+                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="所来说两句..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fo9-Dd-dRQ">
+                            <rect key="frame" x="10" y="-2.5" width="154" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="uoF-sR-jBP"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Fo9-Dd-dRQ" firstAttribute="leading" secondItem="hka-RI-V0o" secondAttribute="leading" constant="10" id="TdL-7u-TdN"/>
+                        <constraint firstItem="Fo9-Dd-dRQ" firstAttribute="centerY" secondItem="hka-RI-V0o" secondAttribute="centerY" id="qwi-0B-VOB"/>
+                        <constraint firstAttribute="trailing" secondItem="Fo9-Dd-dRQ" secondAttribute="trailing" constant="10" id="sH7-B7-zQd"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_good" translatesAutoresizingMaskIntoConstraints="NO" id="WVj-4X-mWm">
+                    <rect key="frame" x="204" y="12.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="QCX-Wa-gP2"/>
+                        <constraint firstAttribute="width" constant="20" id="sE8-ht-EOd"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SH0-qT-itH">
+                    <rect key="frame" x="229" y="15" width="7.5" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLQ-vI-JuH">
+                    <rect key="frame" x="281.5" y="15" width="7.5" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_comment" translatesAutoresizingMaskIntoConstraints="NO" id="EJb-lX-v6Q">
+                    <rect key="frame" x="256.5" y="12.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="OMy-XJ-4iB"/>
+                        <constraint firstAttribute="height" constant="20" id="Ov0-Sf-2Os"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WVj-4X-mWm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1Zz-XK-1ph"/>
+                <constraint firstItem="OLQ-vI-JuH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ABA-6Q-Ub3"/>
+                <constraint firstItem="WVj-4X-mWm" firstAttribute="leading" secondItem="hka-RI-V0o" secondAttribute="trailing" constant="20" id="Aiv-0D-odh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hka-RI-V0o" secondAttribute="bottom" constant="10" id="BnA-l5-zhC"/>
+                <constraint firstItem="hka-RI-V0o" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="KRx-Lr-rwX"/>
+                <constraint firstItem="hka-RI-V0o" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="UXo-Z6-WRk"/>
+                <constraint firstItem="EJb-lX-v6Q" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZuU-ak-Yuo"/>
+                <constraint firstItem="SH0-qT-itH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bhg-rg-mFS"/>
+                <constraint firstItem="hka-RI-V0o" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cve-FJ-TI1"/>
+                <constraint firstItem="OLQ-vI-JuH" firstAttribute="leading" secondItem="EJb-lX-v6Q" secondAttribute="trailing" constant="5" id="g28-1b-VMW"/>
+                <constraint firstItem="EJb-lX-v6Q" firstAttribute="leading" secondItem="SH0-qT-itH" secondAttribute="trailing" constant="20" id="kaJ-9S-RXx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OLQ-vI-JuH" secondAttribute="trailing" constant="30" id="lbn-RI-zdu"/>
+                <constraint firstItem="SH0-qT-itH" firstAttribute="leading" secondItem="WVj-4X-mWm" secondAttribute="trailing" constant="5" id="weV-A6-loq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="23.199999999999999" y="8.5457271364317844"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_comment" width="20" height="20"/>
+        <image name="home_good" width="20" height="20"/>
+    </resources>
+</document>

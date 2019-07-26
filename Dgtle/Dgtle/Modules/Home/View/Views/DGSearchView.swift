@@ -43,6 +43,7 @@ class DGSearchView: UIView {
         view.attributedPlaceholder = attributeString
         view.textColor = UIColor(valueRGB: 0x333333)
         view.clearButtonMode = .whileEditing
+        view.returnKeyType = .search
         return view
     }()
     

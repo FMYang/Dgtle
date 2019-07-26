@@ -126,6 +126,7 @@ struct DGHomeTopicArticleModel: HandyJSON {
     var list: [DGHomeTopicArticleItem]?
 }
 
+// 文章专题item模型
 struct DGHomeTopicArticleItem: HandyJSON {
     var title: String?
     var pic: String?
