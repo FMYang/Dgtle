@@ -261,6 +261,7 @@ class DGHomeDetailViewController: UIViewController {
     func replaceImg(content: inout String) {
         let (tags, srcs) = getAllImgTagsAndSrcs(html: content)
         for i in 0..<tags.count {
+            /// id设置为图片地址的MD5值
             let newTag = """
             <img id=\(srcs[i+1].kf.md5) src="\(defaultImageUrl)" style="width:\(screen_width)px; height=200px">
             """
@@ -276,18 +277,20 @@ class DGHomeDetailViewController: UIViewController {
 
             let cacheType = cache.imageCachedType(forKey: url)
             if cacheType != .none {
-                // 缓存存在，取缓存图片地址
+                /// 缓存存在，取缓存图片地址
                 let cachePath = cache.cachePath(forKey: url)
                 let id = url.kf.md5
                 let defaultImageUrl = self.defaultImageUrl
                 let jsMethod = "replaceDefaultImage('\(id)', '\(cachePath)', '\(defaultImageUrl)')"
+                /// 调用js方法，替换默认占位图，需在webview didFinish后调用
                 self.webView.evaluateJavaScript(jsMethod, completionHandler: nil)
 
             } else {
-                // 缓存存在，下载并缓存，获取缓存图片地址
+                /// 缓存存在，下载并缓存，获取缓存图片地址
                 let loader = ImageDownloader.init(name: "webView image download")
                 loader.downloadImage(with: URL(string: url)!, retrieveImageTask: nil, options: nil, progressBlock: nil, completionHandler: { (image, error, url, data) in
                     guard let image = image else { return }
+                    /// 下载完成，缓存图片
                     cache.store(image,
                                 original: data,
                                 forKey: url!.absoluteString,
@@ -300,6 +303,7 @@ class DGHomeDetailViewController: UIViewController {
                                     let id = url.kf.md5
                                     let defaultImageUrl = self.defaultImageUrl
                                     let jsMethod = "replaceDefaultImage('\(id)', '\(cachePath)', '\(defaultImageUrl)')"
+                                    /// 调用js方法，替换默认占位图，需在webview didFinish后调用
                                     self.webView.evaluateJavaScript(jsMethod, completionHandler: nil)
                     })
                 })

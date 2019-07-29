@@ -555,22 +555,21 @@ function getLinkSRCAtPoint(x,y) {
     imgWidth('#v-titleimage')
     
     function replaceDefaultImage(id, cachePath, defaultPath) {
+        // 图片id
         var imageId = id;
         
+        // 本地缓存路径
         var cachePath = cachePath;
         
+        // 默认图片路径
         var defaultPath = defaultPath;
         
+        // 根据id，获取img元素
         element = document.getElementById(imageId);
         
-<!--        alert(element.src);-->
-<!--        alert("js 1: imageId = " + defaultPath);-->
-<!--        alert("js 2: match = " + element.src.match(defaultPath);-->
-
         if(element.src.match(defaultPath))
         {
-<!--            alert("替换默认图成功");-->
-            //使用本地缓存的图片路径替换src路径
+            // 使用本地缓存的图片路径替换默认占位图路径
             element.src = cachePath;
         }
     }
