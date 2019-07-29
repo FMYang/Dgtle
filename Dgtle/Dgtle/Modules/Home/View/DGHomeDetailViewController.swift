@@ -11,10 +11,14 @@ import WebKit
 
 class DGHomeDetailViewController: UIViewController {
     
+    let defaultImageUrl = Bundle.main.path(forResource: "article_default_new", ofType: "png")!
+    
     let viewModel = DGHomeDetailViewModel()
     let bag = DisposeBag()
     var aid: String = ""
     var htmlTemplate: String?
+    var srcs = [String]()
+    var titleImagePath = ""
     
     lazy var webView: WKWebView = {
         let view = WKWebView.init(frame: .zero)
@@ -70,12 +74,14 @@ class DGHomeDetailViewController: UIViewController {
     }
     
     func loadHTMLContent(model: DGArticleModel?) {
-        let content = model?.returnData?.article_content?.content ?? ""
+        var content = model?.returnData?.article_content?.content ?? ""
         let htmlTitleImage = getTtitleImageHTMLString(model: model)
         let htmlTitle = getTitleHTMLString(model: model)
         let htmlSubTitle = getSubTitleHTMLString(model: model)
         let authorInfo = getAuthorInfoHTMLString(model: model)
         let comment = getCommentHTMLString(model: model)
+
+        replaceImg(content: &content)
         
         let htmlTemplatePath = Bundle.main.path(forResource: "article", ofType: "html") ?? ""
         let basePath = URL(fileURLWithPath: htmlTemplatePath)
@@ -98,8 +104,9 @@ class DGHomeDetailViewController: UIViewController {
     /// 文章顶部图片HTML
     func getTtitleImageHTMLString(model: DGArticleModel?) -> String {
         let picUrl = model?.returnData?.articledata?.pic ?? ""
+        titleImagePath = picUrl
         let htmlTitleImage = """
-        <img src=\(picUrl) style="width:\(screen_width)px; height:auto;">
+        <img id=\(picUrl.kf.md5) src=\(defaultImageUrl) style="width:\(screen_width)px; height:auto;">
         """
         return htmlTitleImage
     }
@@ -210,9 +217,93 @@ class DGHomeDetailViewController: UIViewController {
     /// - Parameters:
     ///   - html: html字符串
     ///   - variables: 替换的变量字典（key为占位符，value为新值）
-    func repalcePlaceholder( html: inout String?, variables: [String: String]) {
+    func repalcePlaceholder(html: inout String?, variables: [String: String]) {
         for (key, value) in variables {
             html = html?.replacingOccurrences(of: key, with: value)
+        }
+    }
+    
+    /// 获取所有img标签和src
+    ///
+    /// - Parameter html: 目标字符串
+    func getAllImgTagsAndSrcs(html: String) -> ([String], [String]) {
+//        let match = "<img[^>]+id=*[^>]*/>"
+        let match = "<img([\\w\\W]+?)/>"
+        let regular = try? NSRegularExpression(pattern: match, options: [])
+        // 注意：这里获取字符串长度不能直接使用html.count，要使用html.utf16.count，否则匹配不到全部
+        // 具体区别看这里：https://a1049145827.github.io/2019/04/23/Swift-%E4%B8%AD%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E8%8E%B7%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6/
+        let result = regular?.matches(in: html, options: [], range: NSRange(location: 0, length: html.utf16.count))
+        var imgTags = [String]()
+        srcs.removeAll()
+        // 先添加标题图片地址，再添加content图片地址
+        srcs.append(titleImagePath)
+        result?.forEach({ (checkResult) in
+            let imgRange = checkResult.range
+            let img = (html as NSString).substring(with: imgRange)
+            let component = img.components(separatedBy: "src=")
+            if component.count > 1 {
+                let temp = component[1].components(separatedBy: " ")
+                if temp.count > 0 {
+                    var src = temp[0]
+                    src = src.replacingOccurrences(of: "\"", with: "")
+                    srcs.append(src)
+                }
+            }
+            
+            imgTags.append(img)
+        })
+        return (imgTags, srcs)
+    }
+    
+    /// 使用占位图替换img标签
+    ///
+    /// - Parameter content: html内容
+    func replaceImg(content: inout String) {
+        let (tags, srcs) = getAllImgTagsAndSrcs(html: content)
+        for i in 0..<tags.count {
+            let newTag = """
+            <img id=\(srcs[i+1].kf.md5) src="\(defaultImageUrl)" style="width:\(screen_width)px; height=200px">
+            """
+            content = content.replacingOccurrences(of: tags[i], with: newTag)
+        }
+    }
+    
+    /// 下载图片
+    func downloadImage() {
+        srcs.forEach { (url) in
+            let cache = ImageCache(name: "webview")
+            cache.maxMemoryCost = 10*1024*1024
+
+            let cacheType = cache.imageCachedType(forKey: url)
+            if cacheType != .none {
+                // 缓存存在，取缓存图片地址
+                let cachePath = cache.cachePath(forKey: url)
+                let id = url.kf.md5
+                let defaultImageUrl = self.defaultImageUrl
+                let jsMethod = "replaceDefaultImage('\(id)', '\(cachePath)', '\(defaultImageUrl)')"
+                self.webView.evaluateJavaScript(jsMethod, completionHandler: nil)
+
+            } else {
+                // 缓存存在，下载并缓存，获取缓存图片地址
+                let loader = ImageDownloader.init(name: "webView image download")
+                loader.downloadImage(with: URL(string: url)!, retrieveImageTask: nil, options: nil, progressBlock: nil, completionHandler: { (image, error, url, data) in
+                    guard let image = image else { return }
+                    cache.store(image,
+                                original: data,
+                                forKey: url!.absoluteString,
+                                processorIdentifier: "",
+                                cacheSerializer: DefaultCacheSerializer.default,
+                                toDisk: true,
+                                completionHandler: {
+                                    guard let url = url?.absoluteString else { return }
+                                    let cachePath = cache.cachePath(forComputedKey: url)
+                                    let id = url.kf.md5
+                                    let defaultImageUrl = self.defaultImageUrl
+                                    let jsMethod = "replaceDefaultImage('\(id)', '\(cachePath)', '\(defaultImageUrl)')"
+                                    self.webView.evaluateJavaScript(jsMethod, completionHandler: nil)
+                    })
+                })
+            }
         }
     }
 }
@@ -227,8 +318,11 @@ extension DGHomeDetailViewController: WKUIDelegate {
 extension DGHomeDetailViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // 调用js方法，裁剪详情H5图片
-        // TODO: 懒加载图片
-        let jsMehod = String(format: "imgWidth('#v-main')")
-        webView.evaluateJavaScript(jsMehod)
+//        let jsMehod = String(format: "imgWidth('#v-main')")
+//        webView.evaluateJavaScript(jsMehod)
+        print("webview didFinish")
+        // 懒加载图片
+        downloadImage()
     }
 }
+

@@ -407,7 +407,7 @@ ul{padding-left:30px}
    }
 
 window.onload = function () {
-    alert("============ window.onload ==============")
+<!--    alert("============ window.onload ==============")-->
     var el = document.getElementById("v-body");
     el.addEventListener("click", clickElement);
     var dgiframe = document.getElementsByTagName('iframe');
@@ -553,6 +553,28 @@ function getLinkSRCAtPoint(x,y) {
         Img.css('margin-left', -25);
     }
     imgWidth('#v-titleimage')
+    
+    function replaceDefaultImage(id, cachePath, defaultPath) {
+        var imageId = id;
+        
+        var cachePath = cachePath;
+        
+        var defaultPath = defaultPath;
+        
+        element = document.getElementById(imageId);
+        
+<!--        alert(element.src);-->
+<!--        alert("js 1: imageId = " + defaultPath);-->
+<!--        alert("js 2: match = " + element.src.match(defaultPath);-->
+
+        if(element.src.match(defaultPath))
+        {
+<!--            alert("替换默认图成功");-->
+            //使用本地缓存的图片路径替换src路径
+            element.src = cachePath;
+        }
+    }
+
     
 </script>
     
