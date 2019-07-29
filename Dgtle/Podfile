@@ -46,5 +46,7 @@ target 'Dgtle' do
   #
   pod 'JPFPSStatus'
 
+  #
+  pod 'GCDWebServer'
 
 end

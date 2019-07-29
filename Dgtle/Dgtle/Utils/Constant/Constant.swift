@@ -29,3 +29,12 @@ let IG_NaviHeight: CGFloat = isIphoneXOrLater ? 88 : 64
 let IG_TabbarHeight: CGFloat = isIphoneXOrLater ? 83 : 49
 
 let ig_pageSize = 30
+
+/// 判断是真机还是模拟器
+var isSimulator: Bool {
+    var isSim = false
+    #if arch(i386) || arch(x86_64)
+    isSim = true
+    #endif
+    return isSim
+}

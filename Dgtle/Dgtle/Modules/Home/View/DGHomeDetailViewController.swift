@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import GCDWebServer
 
 class DGHomeDetailViewController: UIViewController {
     
@@ -20,8 +21,15 @@ class DGHomeDetailViewController: UIViewController {
     var srcs = [String]()
     var titleImagePath = ""
     
+    // 使用GCDWebServer解决真机不能加载沙盒图片的问题
+    var webService = GCDWebServer()
+    let webServicePath = "http://localhost:9999"
+    
     lazy var webView: WKWebView = {
-        let view = WKWebView.init(frame: .zero)
+        let config = WKWebViewConfiguration()
+        config.preferences = WKPreferences()
+        config.preferences.minimumFontSize = 10 // 默认为0
+        let view = WKWebView(frame: .zero, configuration: config)
         view.backgroundColor = .white
         view.uiDelegate = self
         view.navigationDelegate = self
@@ -42,12 +50,18 @@ class DGHomeDetailViewController: UIViewController {
         super.viewDidLoad()
         layoutUI()
         fetchDetail()
+        if !isSimulator {
+            startWebServer()
+        }
     }
     
     deinit {
         webView.removeFromSuperview()
         webView.uiDelegate = nil
         webView.navigationDelegate = nil
+        if !isSimulator {
+            stopWebServer()
+        }
     }
     
     func layoutUI() {
@@ -106,7 +120,7 @@ class DGHomeDetailViewController: UIViewController {
         let picUrl = model?.returnData?.articledata?.pic ?? ""
         titleImagePath = picUrl
         let htmlTitleImage = """
-        <img id=\(picUrl.kf.md5) src=\(defaultImageUrl) style="width:\(screen_width)px; height:auto;">
+        <img id=\(picUrl) src=\(defaultImageUrl) style="width:\(screen_width)px; height:auto;">
         """
         return htmlTitleImage
     }
@@ -227,8 +241,7 @@ class DGHomeDetailViewController: UIViewController {
     ///
     /// - Parameter html: 目标字符串
     func getAllImgTagsAndSrcs(html: String) -> ([String], [String]) {
-//        let match = "<img[^>]+id=*[^>]*/>"
-        let match = "<img([\\w\\W]+?)/>"
+        let match = "(<img(?!.*?alt=(['\"]).*?\\2)[^>]*)(>)"
         let regular = try? NSRegularExpression(pattern: match, options: [])
         // 注意：这里获取字符串长度不能直接使用html.count，要使用html.utf16.count，否则匹配不到全部
         // 具体区别看这里：https://a1049145827.github.io/2019/04/23/Swift-%E4%B8%AD%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E8%8E%B7%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6/
@@ -246,6 +259,7 @@ class DGHomeDetailViewController: UIViewController {
                 if temp.count > 0 {
                     var src = temp[0]
                     src = src.replacingOccurrences(of: "\"", with: "")
+                    src = src.replacingOccurrences(of: ">", with: "")
                     srcs.append(src)
                 }
             }
@@ -263,7 +277,7 @@ class DGHomeDetailViewController: UIViewController {
         for i in 0..<tags.count {
             /// id设置为图片地址的MD5值
             let newTag = """
-            <img id=\(srcs[i+1].kf.md5) src="\(defaultImageUrl)" style="width:\(screen_width)px; height=200px">
+            <img id=\(srcs[i+1]) src="\(defaultImageUrl)" style="width:\(screen_width)px; height=200px">
             """
             content = content.replacingOccurrences(of: tags[i], with: newTag)
         }
@@ -278,8 +292,13 @@ class DGHomeDetailViewController: UIViewController {
             let cacheType = cache.imageCachedType(forKey: url)
             if cacheType != .none {
                 /// 缓存存在，取缓存图片地址
-                let cachePath = cache.cachePath(forKey: url)
-                let id = url.kf.md5
+                var cachePath = ""
+                if isSimulator {
+                    cachePath = cache.cachePath(forKey: url)
+                } else {
+                    cachePath = webServicePath + "/Library/Caches/com.onevcat.Kingfisher.ImageCache.webview/\(url.kf.md5)"
+                }
+                let id = url
                 let defaultImageUrl = self.defaultImageUrl
                 let jsMethod = "replaceDefaultImage('\(id)', '\(cachePath)', '\(defaultImageUrl)')"
                 /// 调用js方法，替换默认占位图，需在webview didFinish后调用
@@ -288,7 +307,8 @@ class DGHomeDetailViewController: UIViewController {
             } else {
                 /// 缓存存在，下载并缓存，获取缓存图片地址
                 let loader = ImageDownloader.init(name: "webView image download")
-                loader.downloadImage(with: URL(string: url)!, retrieveImageTask: nil, options: nil, progressBlock: nil, completionHandler: { (image, error, url, data) in
+                guard let url = URL(string: url) else { return }
+                loader.downloadImage(with: url, retrieveImageTask: nil, options: nil, progressBlock: nil, completionHandler: { (image, error, url, data) in
                     guard let image = image else { return }
                     /// 下载完成，缓存图片
                     cache.store(image,
@@ -299,8 +319,13 @@ class DGHomeDetailViewController: UIViewController {
                                 toDisk: true,
                                 completionHandler: {
                                     guard let url = url?.absoluteString else { return }
-                                    let cachePath = cache.cachePath(forComputedKey: url)
-                                    let id = url.kf.md5
+                                    var cachePath = ""
+                                    if isSimulator {
+                                        cachePath = cache.cachePath(forKey: url)
+                                    } else {
+                                        cachePath = self.webServicePath + "/Library/Caches/com.onevcat.Kingfisher.ImageCache.webview/\(url.kf.md5)"
+                                    }
+                                    let id = url
                                     let defaultImageUrl = self.defaultImageUrl
                                     let jsMethod = "replaceDefaultImage('\(id)', '\(cachePath)', '\(defaultImageUrl)')"
                                     /// 调用js方法，替换默认占位图，需在webview didFinish后调用
@@ -330,3 +355,14 @@ extension DGHomeDetailViewController: WKNavigationDelegate {
     }
 }
 
+extension DGHomeDetailViewController {
+    func startWebServer() {
+        webService.addGETHandler(forBasePath: "/", directoryPath: NSHomeDirectory(), indexFilename: "", cacheAge: 3600, allowRangeRequests: true)
+        webService.start(withPort: 9999, bonjourName: "")
+
+    }
+    
+    func stopWebServer() {
+        webService.stop()
+    }
+}

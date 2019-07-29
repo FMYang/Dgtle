@@ -2,6 +2,9 @@ PODS:
   - Alamofire (4.8.0)
   - FDFullscreenPopGesture (1.1)
   - FSPagerView (0.8.2)
+  - GCDWebServer (3.4.2):
+    - GCDWebServer/Core (= 3.4.2)
+  - GCDWebServer/Core (3.4.2)
   - HandyJSON (4.2.1)
   - JPFPSStatus (0.1.1)
   - Kingfisher (4.10.1-beta)
@@ -29,6 +32,7 @@ PODS:
 DEPENDENCIES:
   - FDFullscreenPopGesture
   - FSPagerView
+  - GCDWebServer
   - HandyJSON
   - JPFPSStatus
   - "Kingfisher (from `git@github.com:FMYang/Kingfisher.git`, tag `4.10.0-beta`)"
@@ -46,6 +50,7 @@ SPEC REPOS:
     - Alamofire
     - FDFullscreenPopGesture
     - FSPagerView
+    - GCDWebServer
     - HandyJSON
     - JPFPSStatus
     - MBProgressHUD
@@ -74,6 +79,7 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FSPagerView: 816a18842306973cc7cc6df8a5332272f7815c30
+  GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
   HandyJSON: d0c5fc80204f29056d59d3e5c4587fa0b16b60a8
   JPFPSStatus: 03f32aa3d4d7d0c5bf56f6f3e7cf8b7280a5f52c
   Kingfisher: abd6835cfd04ff6f98696a39e23d094b7c8c2efa
@@ -89,6 +95,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 7b38a86528d51acb9a10f604877999d2a0f47475
+PODFILE CHECKSUM: 1687a038a4e77ad8a270df7217fd921ab81535cc
 
 COCOAPODS: 1.6.0.beta.2
