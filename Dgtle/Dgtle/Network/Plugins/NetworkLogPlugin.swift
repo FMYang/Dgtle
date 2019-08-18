@@ -35,9 +35,9 @@ public final class NetworkLogPlugin: PluginType {
             }
 
             httpStatusCode = response.statusCode
-            let result = try? JSON(data: response.data)
-//            responseData = String(data: response.data, encoding: String.Encoding.utf8)
-            responseData = result//try? JSONSerialization.jsonObject(with: response.data)
+//            let result = try? JSON(data: response.data)
+            responseData = String(data: response.data, encoding: String.Encoding.utf8)
+//            responseData = result//try? JSONSerialization.jsonObject(with: response.data)
             responseHttpHeaders = response.response
         case .failure(let error):
             if let request = error.response?.request {

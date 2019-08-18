@@ -22,8 +22,6 @@ class DGHomeDetailViewController: UIViewController {
     var titleImagePath = ""
     
     // 使用GCDWebServer解决真机不能加载沙盒图片的问题
-    var webService = GCDWebServer()
-    let webServicePath = "http://localhost:9999"
     
     lazy var webView: WKWebView = {
         let config = WKWebViewConfiguration()
@@ -50,18 +48,12 @@ class DGHomeDetailViewController: UIViewController {
         super.viewDidLoad()
         layoutUI()
         fetchDetail()
-        if !isSimulator {
-            startWebServer()
-        }
     }
     
     deinit {
         webView.removeFromSuperview()
         webView.uiDelegate = nil
         webView.navigationDelegate = nil
-        if !isSimulator {
-            stopWebServer()
-        }
     }
     
     func layoutUI() {
@@ -296,7 +288,7 @@ class DGHomeDetailViewController: UIViewController {
                 if isSimulator {
                     cachePath = cache.cachePath(forKey: url)
                 } else {
-                    cachePath = webServicePath + "/Library/Caches/com.onevcat.Kingfisher.ImageCache.webview/\(url.kf.md5)"
+                    cachePath = GCDWebServerManager.webServicePath + "/Library/Caches/com.onevcat.Kingfisher.ImageCache.webview/\(url.kf.md5)"
                 }
                 let id = url
                 let defaultImageUrl = self.defaultImageUrl
@@ -323,7 +315,7 @@ class DGHomeDetailViewController: UIViewController {
                                     if isSimulator {
                                         cachePath = cache.cachePath(forKey: url)
                                     } else {
-                                        cachePath = self.webServicePath + "/Library/Caches/com.onevcat.Kingfisher.ImageCache.webview/\(url.kf.md5)"
+                                        cachePath = GCDWebServerManager.webServicePath + "/Library/Caches/com.onevcat.Kingfisher.ImageCache.webview/\(url.kf.md5)"
                                     }
                                     let id = url
                                     let defaultImageUrl = self.defaultImageUrl
@@ -352,17 +344,5 @@ extension DGHomeDetailViewController: WKNavigationDelegate {
         print("webview didFinish")
         // 懒加载图片
         downloadImage()
-    }
-}
-
-extension DGHomeDetailViewController {
-    func startWebServer() {
-        webService.addGETHandler(forBasePath: "/", directoryPath: NSHomeDirectory(), indexFilename: "", cacheAge: 3600, allowRangeRequests: true)
-        webService.start(withPort: 9999, bonjourName: "")
-
-    }
-    
-    func stopWebServer() {
-        webService.stop()
     }
 }

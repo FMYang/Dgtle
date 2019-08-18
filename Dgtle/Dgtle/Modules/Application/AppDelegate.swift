@@ -25,8 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         commonConfig()
+        
+        GCDWebServerManager.shared.startWebServer()
 
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        GCDWebServerManager.shared.stopWebServer()
     }
 }
 

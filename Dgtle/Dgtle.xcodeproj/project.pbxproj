@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1FF3745D562C475AA0A78062 /* Pods_Dgtle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9128B4DB3D57184701F23CA4 /* Pods_Dgtle.framework */; };
+		88003D4122F0069A00119B03 /* GCDWebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88003D4022F0069A00119B03 /* GCDWebServer.swift */; };
 		880EA66A22EA2304001D1427 /* jQuery.v1.8.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 88C926CE22E9CB77003C9E15 /* jQuery.v1.8.3.min.js */; };
 		880EA66C22EA26CE001D1427 /* DGArticleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EA66B22EA26CE001D1427 /* DGArticleDetailModel.swift */; };
 		883BD42722DAF98F007AF284 /* DGHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BD42622DAF98F007AF284 /* DGHomeViewModel.swift */; };
@@ -131,6 +132,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88003D4022F0069A00119B03 /* GCDWebServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDWebServer.swift; sourceTree = "<group>"; };
 		880EA66B22EA26CE001D1427 /* DGArticleDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGArticleDetailModel.swift; sourceTree = "<group>"; };
 		883BD42622DAF98F007AF284 /* DGHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGHomeViewModel.swift; sourceTree = "<group>"; };
 		883BD42822DAFAD8007AF284 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -288,6 +290,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		88003D3F22F0068600119B03 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				88003D4022F0069A00119B03 /* GCDWebServer.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 		883BD42E22DAFAEC007AF284 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +309,7 @@
 		883BD43322DAFCA0007AF284 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				88003D3F22F0068600119B03 /* Server */,
 				883BD43422DAFCA0007AF284 /* Extension */,
 				883BD44822DAFCA0007AF284 /* Namespace */,
 				883BD44A22DAFCA0007AF284 /* AOP */,
@@ -1105,6 +1116,7 @@
 				883BD43022DAFAEC007AF284 /* NetworkLogPlugin.swift in Sources */,
 				880EA66C22EA26CE001D1427 /* DGArticleDetailModel.swift in Sources */,
 				88B5930F22E4CDF400C1A17A /* DGWhaleNewsViewModel.swift in Sources */,
+				88003D4122F0069A00119B03 /* GCDWebServer.swift in Sources */,
 				883BD45C22DAFCA0007AF284 /* Date+Extension.swift in Sources */,
 				883BD43222DAFB7D007AF284 /* HomeApi.swift in Sources */,
 				885EE1D522DC40D4007F9CA9 /* DGInterestHotViewModel.swift in Sources */,

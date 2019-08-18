@@ -567,8 +567,7 @@ function getLinkSRCAtPoint(x,y) {
         // 根据id，获取img元素
         element = document.getElementById(imageId);
         
-        if(element.src.match(defaultPath))
-        {
+        if(element.src.match(defaultPath)) {
             // 使用本地缓存的图片路径替换默认占位图路径
             element.src = cachePath;
         }
